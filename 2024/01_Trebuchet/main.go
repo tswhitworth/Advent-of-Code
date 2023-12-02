@@ -28,14 +28,13 @@ func p2() {
 	defer f.Close()
 
 	for s.Scan() {
-		line := s.Text()
-		lineValue := processLine_2(line, dw, s)
+		lineValue := processLine_2(dw, s)
 		total += lineValue
 	}
 	fmt.Println("p2 Total: ", total)
 }
 
-func processLine_2(line string, dw [][]byte, scanner *bufio.Scanner) int32 {
+func processLine_2(dw [][]byte, scanner *bufio.Scanner) int32 {
 	var digits []int32
 	var radix int32 = 10
 
