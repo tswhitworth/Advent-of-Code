@@ -92,6 +92,7 @@ func getScanner() (*os.File, *bufio.Scanner) {
 
 func processLine_1(line string) int32 {
 	var digits []int32
+	var radix int32 = 10
 
 	for _, ch := range line {
 		if unicode.IsDigit(ch) {
@@ -99,7 +100,7 @@ func processLine_1(line string) int32 {
 		}
 	}
 
-	return digits[0]*10 + digits[len(digits)-1]
+	return digits[0]*radix + digits[len(digits)-1]
 }
 
 func main() {
